@@ -14,17 +14,18 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char laranja_git[]     = "#f9826c";
-static const char cinza_e[]	    = "#0D1117";
-static const char cinza_c[]         = "#30363D";
-static const char azul[]            = "#161B22";
+static const char laranja_git[]     = "#bd93f9";
+static const char cinza_e[]	    = "#282a36";
+static const char cinza_c[]         = "#44475a";
+static const char azul[]            = "#6272a4";
+static const char fg[]		    = "#f8f8f2";
 static const unsigned int baralpha = 100;
 static const unsigned int borderalpha = 0;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, cinza_e, azul },
-	[SchemeSel]  = { azul, laranja_git,  laranja_git  },
-	[SchemeTitle] = { col_gray3, cinza_e, cinza_e },
+	[SchemeNorm] = { fg, cinza_e, azul },
+	[SchemeSel]  = { cinza_e, laranja_git,  cinza_c  },
+	[SchemeTitle] = { fg, cinza_e, cinza_e },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -34,8 +35,10 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "[www]", "", "", "", "", "", "", "" };
-
+static const char *tags[] = { "", "[www]", "", "", "", "", "", "", "" };
+/*
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+*/
 static const Rule rules[] = {
 	/* xprop(1):lASS(STRING) = instance, class
 	 *	WM_CLASS(STRING) = instance, class
@@ -71,8 +74,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", cinza_e , "-nf", col_gray3, "-sb", laranja_git, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", cinza_e , "-nf",fg , "-sb", laranja_git, "-sf", fg, NULL };
+static const char *termcmd[]  = { "konsole", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
