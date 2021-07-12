@@ -2,13 +2,20 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
-static const unsigned int gappx	    = 4;
+static const unsigned int gappx	    = 15;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar	    = 6;
-static const int vertpadbar	    = 8;
+static const int vertpadbar	    = 7;
 static const char *fonts[]          = { "Gohu GohuFont:size=10" };
 static const char dmenufont[]       = "Gohu GohuFont:size=10";
+
+
+
+// COLOR SCHEMES
+//
+// DEFAULT:
+
 /*static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -19,9 +26,10 @@ static const char cinza_e[]	    = "#2A2F33";
 static const char cinza_c[]         = "#44475a";
 static const char azul[]            = "#2E3338";
 static const char fg[]		    = "#bfddb2";
-*/
 
-// gruvbox
+// GRUVBOX: 
+//
+//
 static const char col_gb_black[]     = "#131515";
 static const char col_gb_bg[]        = "#1d2021";
 static const char col_gb_bgm[]       = "#282828";
@@ -57,13 +65,22 @@ static const char col_gb_orange1[]  = "#d65d0e";
 static const char col_gb_orange2[]  = "#fe8019";
 
 
-static const unsigned int baralpha = 255;
-static const unsigned int borderalpha = 255;
+*/
+
+// OMNI THEME
+static const char bg[] = "#191622";
+static const char bg_br[] = "#41414D";
+static const char fg[] = "#E1E1E6";
+static const char bg_cl[] = "#44475a";
+static const char bg_sl[] = "#483C67"
+;
+static const unsigned int baralpha = 0;
+static const unsigned int borderalpha = 50;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gb_gray3, col_gb_bgs, col_gb_bg },
-	[SchemeSel]  = { col_gb_gray1, col_gb_bgs,  col_gb_gray4  },
-	[SchemeTitle] = { col_gb_gray3, col_gb_bgs, col_gb_bg },
+	[SchemeNorm] = { bg_cl, bg, bg_br },
+	[SchemeSel]  = { fg, bg,  bg_sl  },
+	[SchemeTitle] = { bg_cl, bg, bg_br },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -85,6 +102,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       2,       0,           -1 },
+	{ "code",     NULL,       NULL,       3,       0,          -1 },
 };
 
 /* layout(s) */
